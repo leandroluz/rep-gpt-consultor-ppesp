@@ -1,0 +1,21 @@
+# Dependências para o Repositório de Legislação da Polícia Penal de SP
+# Versões específicas para garantir compatibilidade
+
+# Bibliotecas para web scraping e automação
+requests==2.31.0
+beautifulsoup4==4.12.2
+selenium==4.15.2
+webdriver-manager==4.0.1
+
+# Bibliotecas para processamento de dados
+python-dateutil==2.8.2
+
+# Bibliotecas para interface web (opcional, apenas se for desenvolver mais a interface)
+flask==2.3.3
+jinja2==3.1.2
+
+# Bibliotecas para manipulação de arquivos
+pathlib==1.0.1
+
+# Bibliotecas para processamento de texto
+nltk==3.8.1
