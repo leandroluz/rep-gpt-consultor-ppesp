@@ -1,0 +1,18 @@
+{
+    "data_extracao": "23/04/2025 23:34:57",
+    "periodo_busca": {
+        "inicio": "24/04/2022",
+        "fim": "23/04/2025"
+    },
+    "quantidade": {
+        "decretos": 0,
+        "resolucoes": 0,
+        "portarias": 0,
+        "total": 0
+    },
+    "resultados": {
+        "decretos": [],
+        "resolucoes": [],
+        "portarias": []
+    }
+}
