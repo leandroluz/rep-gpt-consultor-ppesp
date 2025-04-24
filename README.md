@@ -32,7 +32,7 @@ O extrator automatiza o processo de:
 
 1. Instale as dependências:
    ```
-   pip install requests beautifulsoup4 selenium webdriver-manager
+   pip install -r requirements.txt
    ```
 
 2. Execute o script principal:
