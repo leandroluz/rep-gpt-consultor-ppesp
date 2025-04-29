@@ -6,14 +6,16 @@
     <title>Repositório de Legislação da Polícia Penal de SP</title>
     <style>
         :root {
-            --primary-color: #1a5276;
-            --secondary-color: #2980b9;
-            --accent-color: #3498db;
-            --light-color: #ecf0f1;
-            --dark-color: #2c3e50;
-            --success-color: #27ae60;
-            --warning-color: #f39c12;
-            --danger-color: #c0392b;
+            --primary-color: #FF0000; /* Vermelho */
+            --secondary-color: #222222; /* Cinza Escuro */
+            --accent-color: #FF0000; /* Vermelho */
+            --light-color: #FFFFFF; /* Branco */
+            --dark-color: #000000; /* Preto */
+            --text-color-light: #FFFFFF;
+            --text-color-dark: #333333;
+            --background-dark: #000000;
+            --background-medium: #222222;
+            --background-light: #f5f5f5;
         }
         
         * {
@@ -25,8 +27,8 @@
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
-            color: #333;
-            background-color: #f5f5f5;
+            color: var(--text-color-dark);
+            background-color: var(--background-medium); /* Fundo cinza escuro */
         }
         
         .container {
@@ -36,10 +38,10 @@
         }
         
         header {
-            background-color: var(--primary-color);
-            color: white;
-            padding: 20px 0;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            background-color: var(--dark-color); /* Cabeçalho preto */
+            color: var(--text-color-light);
+            padding: 15px 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.5);
         }
         
         header .container {
@@ -54,13 +56,14 @@
         }
         
         .logo img {
-            height: 50px;
+            height: 100px; /* Ajuste a altura conforme necessário */
             margin-right: 15px;
         }
         
         .logo h1 {
-            font-size: 1.5rem;
+            font-size: 1.4rem;
             font-weight: 600;
+            color: var(--light-color);
         }
         
         nav ul {
@@ -73,19 +76,19 @@
         }
         
         nav ul li a {
-            color: white;
+            color: var(--light-color);
             text-decoration: none;
             font-weight: 500;
             transition: color 0.3s;
         }
         
         nav ul li a:hover {
-            color: var(--light-color);
+            color: var(--primary-color); /* Vermelho no hover */
         }
         
         .hero {
-            background-color: var(--secondary-color);
-            color: white;
+            background-color: var(--secondary-color); /* Cinza escuro */
+            color: var(--text-color-light);
             padding: 50px 0;
             text-align: center;
         }
@@ -93,12 +96,14 @@
         .hero h2 {
             font-size: 2.5rem;
             margin-bottom: 20px;
+            color: var(--light-color);
         }
         
         .hero p {
             font-size: 1.2rem;
             max-width: 800px;
             margin: 0 auto 30px;
+            color: #ccc; /* Cinza claro para texto secundário */
         }
         
         .search-container {
@@ -110,18 +115,24 @@
         .search-container input {
             width: 100%;
             padding: 15px 20px;
-            border: none;
+            border: 1px solid #555;
             border-radius: 30px;
             font-size: 1rem;
+            background-color: #444;
+            color: var(--light-color);
             box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+        
+        .search-container input::placeholder {
+            color: #aaa;
         }
         
         .search-container button {
             position: absolute;
             right: 5px;
             top: 5px;
-            background-color: var(--primary-color);
-            color: white;
+            background-color: var(--primary-color); /* Botão vermelho */
+            color: var(--light-color);
             border: none;
             border-radius: 30px;
             padding: 10px 20px;
@@ -130,11 +141,12 @@
         }
         
         .search-container button:hover {
-            background-color: var(--dark-color);
+            background-color: #cc0000; /* Vermelho mais escuro no hover */
         }
         
         .main-content {
             padding: 50px 0;
+            background-color: var(--background-medium); /* Fundo cinza escuro */
         }
         
         .section-title {
@@ -144,7 +156,7 @@
         
         .section-title h2 {
             font-size: 2rem;
-            color: var(--primary-color);
+            color: var(--light-color);
             position: relative;
             display: inline-block;
             padding-bottom: 10px;
@@ -158,7 +170,7 @@
             transform: translateX(-50%);
             width: 80px;
             height: 3px;
-            background-color: var(--accent-color);
+            background-color: var(--primary-color); /* Linha vermelha */
         }
         
         .years-container {
@@ -170,29 +182,31 @@
         }
         
         .year-card {
-            background-color: white;
+            background-color: var(--secondary-color); /* Cinza escuro */
+            border: 1px solid #444;
             border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
             padding: 20px;
             width: 200px;
             text-align: center;
-            transition: transform 0.3s, box-shadow 0.3s;
+            transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
             cursor: pointer;
         }
         
         .year-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+            border-color: var(--primary-color); /* Borda vermelha no hover */
         }
         
         .year-card h3 {
             font-size: 1.8rem;
-            color: var(--primary-color);
+            color: var(--light-color);
             margin-bottom: 10px;
         }
         
         .year-card p {
-            color: #666;
+            color: #ccc;
         }
         
         .documents-container {
@@ -204,6 +218,13 @@
             display: block;
         }
         
+        .year-title {
+            color: var(--light-color);
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+        }
+        
         .months-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
@@ -211,15 +232,16 @@
         }
         
         .month-card {
-            background-color: white;
+            background-color: var(--secondary-color); /* Cinza escuro */
+            border: 1px solid #444;
             border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
             overflow: hidden;
         }
         
         .month-header {
-            background-color: var(--primary-color);
-            color: white;
+            background-color: var(--dark-color); /* Preto */
+            color: var(--light-color);
             padding: 15px;
             font-weight: 600;
         }
@@ -230,7 +252,7 @@
         
         .document-item {
             padding: 10px 0;
-            border-bottom: 1px solid #eee;
+            border-bottom: 1px solid #444;
         }
         
         .document-item:last-child {
@@ -238,14 +260,14 @@
         }
         
         .document-item a {
-            color: var(--dark-color);
+            color: var(--light-color);
             text-decoration: none;
             display: block;
             transition: color 0.3s;
         }
         
         .document-item a:hover {
-            color: var(--accent-color);
+            color: var(--primary-color); /* Vermelho no hover */
         }
         
         .document-type {
@@ -254,41 +276,39 @@
             padding: 3px 8px;
             border-radius: 3px;
             margin-right: 5px;
+            color: var(--light-color);
         }
         
         .document-type.decreto {
-            background-color: #e74c3c;
-            color: white;
+            background-color: #c0392b; /* Vermelho escuro */
         }
         
         .document-type.resolucao {
-            background-color: #3498db;
-            color: white;
+            background-color: #2980b9; /* Azul */
         }
         
         .document-type.portaria {
-            background-color: #2ecc71;
-            color: white;
+            background-color: #27ae60; /* Verde */
         }
         
         .document-date {
             font-size: 0.8rem;
-            color: #777;
+            color: #aaa;
             margin-top: 5px;
         }
         
         .empty-month {
             padding: 20px;
             text-align: center;
-            color: #777;
+            color: #aaa;
         }
         
         .back-to-top {
             position: fixed;
             bottom: 20px;
             right: 20px;
-            background-color: var(--primary-color);
-            color: white;
+            background-color: var(--primary-color); /* Vermelho */
+            color: var(--light-color);
             width: 50px;
             height: 50px;
             border-radius: 50%;
@@ -296,20 +316,21 @@
             justify-content: center;
             align-items: center;
             cursor: pointer;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.5);
             transition: background-color 0.3s;
             z-index: 100;
         }
         
         .back-to-top:hover {
-            background-color: var(--dark-color);
+            background-color: #cc0000; /* Vermelho mais escuro */
         }
         
         footer {
-            background-color: var(--dark-color);
-            color: white;
+            background-color: var(--dark-color); /* Preto */
+            color: var(--light-color);
             padding: 30px 0;
             text-align: center;
+            border-top: 3px solid var(--primary-color);
         }
         
         .footer-content {
@@ -330,7 +351,7 @@
         }
         
         .footer-links a:hover {
-            color: white;
+            color: var(--primary-color);
         }
         
         .copyright {
@@ -348,6 +369,10 @@
             .logo {
                 margin-bottom: 15px;
                 justify-content: center;
+            }
+            
+            .logo h1 {
+                font-size: 1.2rem;
             }
             
             nav ul {
@@ -381,14 +406,16 @@
             width: 100%;
             height: 100%;
             overflow: auto;
-            background-color: rgba(0,0,0,0.5);
+            background-color: rgba(0,0,0,0.8);
         }
         
         .modal-content {
-            background-color: white;
+            background-color: var(--secondary-color); /* Cinza escuro */
+            color: var(--light-color);
             margin: 5% auto;
             padding: 20px;
             border-radius: 8px;
+            border: 1px solid #555;
             width: 80%;
             max-width: 800px;
             max-height: 80vh;
@@ -404,28 +431,29 @@
         }
         
         .close:hover {
-            color: black;
+            color: var(--light-color);
         }
         
         .modal-header {
             padding-bottom: 15px;
             margin-bottom: 15px;
-            border-bottom: 1px solid #eee;
+            border-bottom: 1px solid #555;
         }
         
         .modal-title {
-            color: var(--primary-color);
+            color: var(--primary-color); /* Vermelho */
             margin-bottom: 5px;
         }
         
         .modal-metadata {
-            color: #666;
+            color: #ccc;
             font-size: 0.9rem;
         }
         
         .modal-body {
             white-space: pre-line;
             line-height: 1.8;
+            color: var(--light-color);
         }
     </style>
 </head>
@@ -433,6 +461,7 @@
     <header>
         <div class="container">
             <div class="logo">
+                <img src="logo_ppesp.jpg" alt="Logo Polícia Penal SP">
                 <h1>Repositório de Legislação da Polícia Penal de SP</h1>
             </div>
             <nav>
